@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="css/weather.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500"
+      rel="stylesheet"
+    />
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <title>Weather</title>
+  </head>
+
+  <body>
+    <input type="checkbox" name="b1" id="b1" />
+    <div class="forecast">
+      <div class="inner">
+        <div class="col1">
+          <div class="title">
+            <h1>Local Weather Six Hour Forecast</h1>
+            <h2>Northern California with doppler radar</h2>
+            <div class="form">
+              <span>
+                Forecast for
+              </span>
+              <!-- <div class="input"> -->
+              <input
+                type="text"
+                id="city"
+                value="davis"
+                class="search input"
+                name="location"
+              />
+              <button
+                onclick="makeCorsRequest()"
+                type="submit"
+                id="submit"
+                class="submit input"
+                value="submit"
+              >
+                submit
+              </button>
+              <!-- </div> -->
+            </div>
+          </div>
+          <div class="tablet">
+            <div class="current ">
+              <!-- probably have to adjust the line below -->
+              <p class="adjust" id="time0">current<br />12PM</p>
+              <!-- <p class="adjust" id="time0">12pm</p> -->
+              <img src="assets/fewclouds-day.svg" id="image0" alt="" />
+              <div class="line"></div>
+              <h1 class="adjust" id="temp0">67</h1>
+            </div>
+          </div>
+        </div>
+        <div class="doppler">
+          <div class="allmap">
+            <img class = "topmap topMap""
+            src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg
+            " class=" alt="">
+            <img
+              class="map"
+              src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif "
+              class="theCities"
+              alt=""
+            />
+
+            <div class="whatever" id="img0">
+              <img src="" class="radar" id="myImg0" alt="" />
+            </div>
+            <div class="whatever" id="img1">
+              <img src="" class="radar" id="myImg1" alt="" />
+            </div>
+            <div class="whatever" id="img2">
+              <img src="" class="radar" id="myImg2" alt="" />
+            </div>
+            <div class="whatever" id="img3">
+              <img src="" class="radar" id="myImg3" alt="" />
+            </div>
+            <div class="whatever" id="img4">
+              <img src="" class="radar" id="myImg4" alt="" />
+            </div>
+            <div class="whatever" id="img5">
+              <img src="" class="radar" id="myImg5" alt="" />
+            </div>
+            <div class="whatever" id="img6">
+              <img src="" class="radar" id="myImg6" alt="" />
+            </div>
+            <div class="whatever" id="img7">
+              <img src="" class="radar" id="myImg7" alt="" />
+            </div>
+            <div class="whatever" id="img8">
+              <img src="" class="radar" id="myImg8" alt="" />
+            </div>
+            <div class="whatever" id="img9">
+              <img src="" class="radar" id="myImg9" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="icon" for="b1">
+        <i class="fas fa-chevron-up"></i>
+      </label>
+    </div>
+
+    <div class="period">
+      <label class="icon" for="b1">
+        <i class="fas fa-chevron-down"></i>
+      </label>
+
+      <div class="row">
+        <div class="time">
+          <h3 class="temp" id="time1">1:00pm</h3>
+          <img src="assets/fewclouds-day.svg" id="image1" alt="" />
+          <h1 class="new" id="temp1">67</h1>
+        </div>
+        <!-- <div class="vl"></div> -->
+      </div>
+      <div class="row">
+        <div class="time">
+          <h3 class="temp" id="time2">1:00pm</h3>
+          <img src="assets/fewclouds-day.svg" id="image2" alt="" />
+          <h1 id="temp2">67</h1>
+        </div>
+        <div class="vl"></div>
+      </div>
+
+      <div class="row">
+        <div class="time">
+          <h3 class="temp" id="time3">1:00pm</h3>
+          <img src="assets/fewclouds-day.svg" id="image3" alt="" />
+          <h1 id="temp3">67</h1>
+        </div>
+        <div class="vl"></div>
+      </div>
+
+      <div class="row">
+        <div class="time">
+          <h3 class="temp" id="time4">1:00pm</h3>
+          <img src="assets/fewclouds-day.svg" id="image4" alt="" />
+          <h1 id="temp4">67</h1>
+        </div>
+        <div class="vl"></div>
+      </div>
+
+      <div class="row">
+        <div class="time">
+          <h3 class="temp" id="time5">1:00pm</h3>
+          <img src="assets/fewclouds-day.svg" id="image5" alt="" />
+          <h1 id="temp5">67</h1>
+        </div>
+        <div class="vl"></div>
+      </div>
+    </div>
+
+    <script src="js/weather.js"></script>
+  </body>
+</html>
