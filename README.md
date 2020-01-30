@@ -1,6 +1,6 @@
 # Weather Application
 
-### [Live Demo](https://daniel9a.github.io/WeatherApp/)
+### [Live Demo](https://narayank97.github.io/Weather-App/)
 
 This is a weather application that uses **OpenWeatherMap Hourly Forcast API** to display weather for the weather submited.
 
