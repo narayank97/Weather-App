@@ -83,17 +83,17 @@ function getTenImages() {
 
 function calcDist(lat1, lon1, lat2, lon2) 
 {
-  let R = 6371; // km
-  let dLat = toRad(lat2-lat1);
-  let dLon = toRad(lon2-lon1);
-  lat1 = toRad(lat1);
-  lat2 = toRad(lat2);
-
-  let a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
-  let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-  let d = R * c * 0.62137119;
-  return d;
+  var R = 6371; // km (change this constant to get miles)
+	var dLat = (lat2-lat1) * Math.PI / 180;
+	var dLon = (lon2-lon1) * Math.PI / 180;
+	var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+		Math.cos(lat1 * Math.PI / 180 ) * Math.cos(lat2 * Math.PI / 180 ) *
+		Math.sin(dLon/2) * Math.sin(dLon/2);
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+	var d = R * c;
+	if (d>1) return Math.round(d);
+	else if (d<=1) return Math.round(d*1000);
+	return d;
 }
 
 // Converts numeric degrees to radians
@@ -110,7 +110,8 @@ function createCORSRequest(method, url) {
 
 // Make the actual CORS request.
 function makeCorsRequest() {
-  let firstPath = "http://api.openweathermap.org/data/2.5/forecast/hourly?";
+  // let firstPath = "http://api.openweathermap.org/data/2.5/forecast/hourly?";
+  let firstPath = "http://api.openweathermap.org/data/2.5/forecast?";
   let city = document.getElementById("city").value;
   let newCity = "";
   if(isNaN(city) == false)
@@ -123,7 +124,8 @@ function makeCorsRequest() {
   }
   // let restAPI = "&units=imperial&APPID=0049cffb9117913c6c97fd0d70ac3044";
   let restAPI = "&units=imperial&APPID=68b49a5a966f1ef3db2cdb1a918a59b7";
-  let url = firstPath + newCity + restAPI;
+  let url = firstPath + newCity+",ca,us" + restAPI;
+  console.log(url);
 
   let xhr = createCORSRequest('GET', url);
 
@@ -142,6 +144,8 @@ function makeCorsRequest() {
       let object = JSON.parse(responseStr);  // turn it into an object
       let lat = parseFloat(JSON.stringify(object.city.coord.lat, undefined, 2));
       let lon = parseFloat(JSON.stringify(object.city.coord.lon, undefined, 2));
+      console.log(typeof(lat));
+      console.log("THIS IS MY LAT AND LONG -----> "+lat+ " , "+lon);
       
       console.log(calcDist(davisLat,davisLon,lat,lon));
       if(calcDist(davisLat,davisLon,lat,lon) > 150)
