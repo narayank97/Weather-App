@@ -1,6 +1,6 @@
 # Weather Application
 
-### [Live Demo](https://narayank97.github.io/Weather-App/)
+### [Live Demo](http://karuns-weather-app.herokuapp.com/)
 
 This is a weather application that uses **OpenWeatherMap Hourly Forcast API** to display weather for the weather submited.
 
@@ -10,14 +10,14 @@ The web application supports three different views
 
 #### Web
 
-![alt text](imgs/web.png)
+![alt text](public/imgs/web.png)
 
 #### Tablet
 
-![alt text](imgs/tablet.png)
+![alt text](public/imgs/tablet.png)
 
 #### Mobile
 
-![alt text](imgs/mobile1.png)
+![alt text](public/imgs/mobile1.png)
 
-![alt text](imgs/mobile2.png)
+![alt text](public/imgs/mobile2.png)
