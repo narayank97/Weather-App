@@ -113,7 +113,7 @@ function createCORSRequest(method, url) {
 // Make the actual CORS request.
 function makeCorsRequest() {
   // let firstPath = "https://api.openweathermap.org/data/2.5/forecast/hourly?";
-  let firstPath = "http://api.openweathermap.org/data/2.5/forecast?";
+  let firstPath = "https://api.openweathermap.org/data/2.5/forecast?";
   let city = document.getElementById("city").value;
   let newCity = "";
   if(isNaN(city) == false)
