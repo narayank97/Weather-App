@@ -1,4 +1,5 @@
-"strict mode";
+
+
 
 // Do a CORS request to get Davis weather hourly forecast
 
@@ -103,7 +104,8 @@ function toRad(Value)
 }
 // Create the XHR object.
 function createCORSRequest(method, url) {
-  let xhr = new XMLhttpRequest();
+  // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+  let xhr = new XMLHttpRequest();
   xhr.open(method, url, true);  // call its open method
   return xhr;
 }
@@ -111,7 +113,7 @@ function createCORSRequest(method, url) {
 // Make the actual CORS request.
 function makeCorsRequest() {
   // let firstPath = "https://api.openweathermap.org/data/2.5/forecast/hourly?";
-  let firstPath = "https://api.openweathermap.org/data/2.5/forecast?";
+  let firstPath = "http://api.openweathermap.org/data/2.5/forecast?";
   let city = document.getElementById("city").value;
   let newCity = "";
   if(isNaN(city) == false)

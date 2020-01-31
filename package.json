@@ -4,7 +4,8 @@
   "description": "### [Live Demo](https://narayank97.github.io/Weather-App/)",
   "main": "startServer.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {},
   "scripts": {
