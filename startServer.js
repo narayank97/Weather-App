@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-var https = require('https');
-var server = https.Server(app);
+var http = require('http');
+var server = http.Server(app);
 
 // app.use(express.static(path.join(__dirname,"assets")));
 // app.use(express.static(path.join(__dirname,"css")));
