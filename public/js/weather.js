@@ -67,7 +67,7 @@ function tryToGetImage(dateObj) {
 		// console.log("failed to load "+filename);
 	}
 	console.log(imageArray.length);
-	newImage.src = "http://radar.weather.gov/ridge/RadarImg/N0R/DAX/"+filename;
+	newImage.src = "https://radar.weather.gov/ridge/RadarImg/N0R/DAX/"+filename;
 }
 
 
@@ -103,15 +103,15 @@ function toRad(Value)
 }
 // Create the XHR object.
 function createCORSRequest(method, url) {
-  let xhr = new XMLHttpRequest();
+  let xhr = new XMLhttpsRequest();
   xhr.open(method, url, true);  // call its open method
   return xhr;
 }
 
 // Make the actual CORS request.
 function makeCorsRequest() {
-  // let firstPath = "http://api.openweathermap.org/data/2.5/forecast/hourly?";
-  let firstPath = "http://api.openweathermap.org/data/2.5/forecast?";
+  // let firstPath = "https://api.openweathermap.org/data/2.5/forecast/hourly?";
+  let firstPath = "httpss://api.openweathermap.org/data/2.5/forecast?";
   let city = document.getElementById("city").value;
   let newCity = "";
   if(isNaN(city) == false)
